@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+<div th:insert="reutilizables/barra_navegacion :: barraNavegacion"></div>
+
+<div class="container"></div>
+
+<!--<table class="table table-striped">
+    <tr>
+        <th>Codigo</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Categoria</th>
+    </tr>
+    <tr th:each="producto : ${productos}">
+        <td th:text="${producto.cod_pro()}"></td>
+        <td th:text="${producto.nom_pro()}"></td>
+        <td th:text="${producto.descripcion()}"></td>
+        <td th:text="${producto.precio()}"></td>
+        <td th:text="${producto.stock_pro()}"></td>
+        <td th:text="${producto.cat_pro()}"></td>
+    </tr>
+</table>-->
+
+<div class="container mt-5">
+    <h1 class="mb-4">Gestion de productos</h1>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Categoria</th>
+            <th>Opciones</th>
+        </tr>
+        <tr th:each="producto : ${productos}">
+            <td th:text="${producto.cod_pro()}"></td>
+            <td th:text="${producto.nom_pro()}"></td>
+            <td th:text="${producto.descripcion()}"></td>
+            <td th:text="${producto.precio()}"></td>
+            <td th:text="${producto.stock_pro()}"></td>
+            <td th:text="${producto.cat_pro()}"></td>
+            <td>
+                <!--<a th:href="@{'/alumno/' + ${alumno.id}}" class="btn btn-primary">Ver</a>
+                <a th:href="@{'/alumno/eliminar/' + ${alumno.id}}" class="btn btn-danger">Eliminar</a>-->
+
+                <a class="btn btn-primary">Ver</a>
+                <a class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+    </table>
+    <a href="/crearalumno" class="btn btn-success">Crear Nuevo Producto</a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

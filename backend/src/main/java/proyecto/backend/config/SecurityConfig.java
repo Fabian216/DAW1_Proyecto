@@ -19,7 +19,7 @@ public class SecurityConfig {
                 // definir rutas protegidas y quien puede acceder a ellas
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/manage/login").permitAll() // rutas con acceso no autenticado
-                        .requestMatchers("/manage/start").hasAnyRole("ADMIN", "OPERATOR") // rutas para ADMIN y OPERATOR
+                        .requestMatchers("/inicio").hasAnyRole("ADMIN", "OPERATOR") // rutas para ADMIN y OPERATOR
                         .requestMatchers("/manage/add").hasAnyRole("ADMIN") // acceso para ADMIN unicamente
                         .anyRequest().authenticated() // el resto debe autenticarse
                 )
@@ -34,7 +34,7 @@ public class SecurityConfig {
                 // configurar formulario de inicio de sesion
                 .formLogin(form -> form
                         .loginPage("/manage/login")
-                        .defaultSuccessUrl("/manage/start", false)
+                        .defaultSuccessUrl("/inicio", false)
                         .permitAll()
                 )
 
