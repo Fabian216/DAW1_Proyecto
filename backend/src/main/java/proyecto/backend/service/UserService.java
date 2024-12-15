@@ -12,7 +12,7 @@ public interface UserService {
 
     Optional<UserDetailDto> getUserById(int id) throws Exception;
 
-    boolean updateUser(UserDto userDto) throws Exception;
+    boolean updateUser(UserDetailDto userDto) throws Exception;
 
     boolean deleteUserById(int id) throws Exception;
 

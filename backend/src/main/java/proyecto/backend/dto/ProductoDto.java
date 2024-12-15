@@ -1,9 +1,9 @@
 package proyecto.backend.dto;
 
-public record ProductoDto(Integer cod_pro,
-                          String nom_pro,
+public record ProductoDto(Integer codPro,
+                          String nomPro,
                           String descripcion,
                           Double precio,
-                          Integer stock_pro,
-                          String cat_pro) {
+                          Integer stockPro,
+                          String catPro) {
 }

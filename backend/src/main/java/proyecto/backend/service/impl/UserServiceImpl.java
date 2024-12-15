@@ -49,18 +49,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean updateUser(UserDto userDto) throws Exception {
-
+    public boolean updateUser(UserDetailDto userDto) throws Exception {
         Optional<User> optional = userRepository.findById(userDto.id());
         return optional.map(user -> {
             user.setFirstName(userDto.firstName());
             user.setLastName(userDto.lastName());
             user.setEmail(userDto.email());
+            user.setRole(userDto.role());
             user.setUpdated(new Date());
             userRepository.save(user);
             return true;
         }).orElse(false);
-
     }
 
     @Override

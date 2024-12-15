@@ -9,6 +9,7 @@ import proyecto.backend.service.ProductoService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductoServiceImpl implements ProductoService {
@@ -31,5 +32,18 @@ public class ProductoServiceImpl implements ProductoService {
         });
         return productos;
     }
+
+    @Override
+    public Optional<ProductoDto> getProductoById(int id) throws Exception {
+        Optional<Producto> optional = productoRepository.findById(id);
+        return optional.map(producto -> new ProductoDto(producto.getCodPro(),
+                producto.getNomPro(),
+                producto.getDescripcion(),
+                producto.getPrecio(),
+                producto.getStockPro(),
+                producto.getCatPro()));
+    }
+
+
 
 }

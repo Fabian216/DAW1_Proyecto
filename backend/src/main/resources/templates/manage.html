@@ -46,12 +46,19 @@
       <th>Nombres</th>
       <th>Apellidos</th>
       <th>Email</th>
+      <th>Opciones</th>
     </tr>
     <tr th:each="user : ${users}">
       <td th:text="${user.id()}"></td>
       <td th:text="${user.firstName()}"></td>
       <td th:text="${user.lastName()}"></td>
       <td th:text="${user.email()}"></td>
+
+      <td>
+        <a th:href="@{/manage/detail/{id}(id=${user.id()})}" class="btn btn-primary">Ver detalle</a>
+        <a class="btn btn-danger">Eliminar</a>
+      </td>
+
     </tr>
   </table>
 
